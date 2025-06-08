@@ -28,7 +28,7 @@ class BasePage:
         return self.driver.find_elements(*locator)
 
 
-    @allure.step('Ожидание закрытия невидимой модалки')
+    @allure.step('Ожидание закрытия модалки')
     def wait_for_invisibility_of_element(self, locator):
         return self.wait.until(expected_conditions.invisibility_of_element_located(locator))
 
@@ -64,3 +64,8 @@ class BasePage:
     @allure.step('Получить текст элемента')
     def giv_text_element(self, locator):
         return self.find_element_with_wait(locator).text
+
+    @allure.step("Получение класса элемента")
+    def giv_class_element(self, locator):
+        element = self.driver.find_element(*locator)
+        return element.get_attribute("class")

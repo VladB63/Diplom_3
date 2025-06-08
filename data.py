@@ -13,3 +13,8 @@ class PersonData:
     EMAIL = 'VladB_20111@ya.ru'
     PASSWORD = 123321
     NUMBER_COUNT = '2'
+
+
+class ModalWindow:
+
+    MODAL_WINDOW_CLOSE = 'Modal_modal__P3_V5'

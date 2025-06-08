@@ -17,6 +17,19 @@ class ConstructorPage(BasePage):
     def wait_overlaying_element_disappeared(self):
         self.wait_for_invisibility_of_element(GeneralLoc.PROBLEM_MODAL)
 
+    @allure.step('Поиск модального окна оформленного заказа')
+    def find_modal_window_in_page(self):
+        if self.find_element_with_wait(ConstructorPageLoc.ORDER_MODAL_WINDOW):
+            return True
+        else:
+            return False
+
+    @allure.step("Получить класс закрытого модального окна Деталей ингредиента")
+    def get_class_close_modal_window(self):
+        close_modal_window = self.giv_class_element(ConstructorPageLoc.INGRIT_CLOSE_MODAL)
+        return close_modal_window
+
+
 
     @allure.step('Клик по кнопке Войти в Аккаунт')
     def click_to_log_button(self):

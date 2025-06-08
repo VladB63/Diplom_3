@@ -1,6 +1,5 @@
 import allure
-from data import PersonData, UrlPage
-from locators.constructor_page_locators import ConstructorPageLoc
+from data import PersonData, UrlPage, ModalWindow
 from pages.auth_page import AuthPage
 from pages.constructor_page import ConstructorPage
 
@@ -33,7 +32,7 @@ class TestConstructorPage:
         cp.wait_overlaying_element_disappeared()
         cp.click_to_ingrit_button()
         cp.close_modal_window()
-        assert ConstructorPageLoc.INGRIT_CLOSE_MODAL
+        assert cp.get_class_close_modal_window() == ModalWindow.MODAL_WINDOW_CLOSE
 
     @allure.title('Проверка счетчика ингредиента при добавлении')
     def test_change_counter_ingrid(self, driver):
@@ -55,4 +54,4 @@ class TestConstructorPage:
         cp.drag_and_drop()
         cp.wait_overlaying_element_disappeared()
         cp.click_to_order_button()
-        assert ConstructorPageLoc.ORDER_MODAL_WINDOW
+        assert cp.find_modal_window_in_page()
