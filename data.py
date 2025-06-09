@@ -18,3 +18,4 @@ class PersonData:
 class ModalWindow:
 
     MODAL_WINDOW_CLOSE = 'Modal_modal__P3_V5'
+    DETAIL_MODAL_WINDOW = 'Modal_modal__container__Wo2l_'

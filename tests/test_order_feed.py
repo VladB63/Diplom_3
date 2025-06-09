@@ -1,5 +1,5 @@
 import allure
-from locators.order_feed_page_locators import OrderFeedPageLoc
+from data import ModalWindow
 from pages.auth_page import AuthPage
 from pages.constructor_page import ConstructorPage
 from pages.order_feed_page import OrderFeedPage
@@ -20,7 +20,7 @@ class TestOrderFeed:
         cp.click_to_order_feed()
         op = OrderFeedPage(driver)
         op.calling_modal_window_order_details()
-        assert OrderFeedPageLoc.ORDER_DETAIL_MODAL
+        assert op.get_class_detail_modal_window() == ModalWindow.DETAIL_MODAL_WINDOW
 
 
     @allure.title('Проверка отображения заказа из Истории в Ленте')
